@@ -1,0 +1,96 @@
+body {
+    background-color: #F4E1C1;
+}
+
+.title{
+    text-align: center;
+}
+
+.font{
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Libre Baskerville', serif;
+    color: #6C4F3D ;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+.tcenter {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+button{
+    background-color: #F4E1C1;
+    border-color:  #dbceb7 ;
+}
+
+button:hover{
+    background-color: aliceblue;
+}
+
+
+form label,
+form input,
+form textarea {
+  display: block;  /* Makes the elements block-level (stack them vertically) */
+  width: 100%;     /* Makes the input elements span the full width of the form */
+  margin-bottom: 10px; /* Adds spacing between each element */
+  text-align: center;
+  background-color: #F4E1C1;
+  border-color: #dbceb7;
+  font-family: 'DM Serif Display', serif;
+  font-family: 'Libre Baskerville', serif;
+  
+}
+
+form button{
+    background-color: #F4E1C1;
+    border-color:  #dbceb7 ;
+}
+
+.book-container {
+    display: flex; /* Align items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between book cover and text */
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+    margin-bottom: 25px; /* Space between different book containers */
+    margin-top: 25px; /* Optional: adds space above each book container */
+    box-shadow: -5px 10px 15px rgba(108, 79, 61, 1);
+}
+
+.book-cover img {
+    max-width: 150px; /* Set the maximum width of the book cover */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.book-details {
+    flex-grow: 1; /* Allow text to expand and fill remaining space */
+}
+
+.book-details h2 {
+    margin: 0; /* Remove margin for the title */
+    font-size: 1.5em; /* Larger title font */
+}
+
+.book-details p {
+    margin: 5px 0; /* Add some space between paragraphs */
+    font-size: 1em; /* Font size for details */
+}
+
+.shaddow{
+    box-shadow: -5px 10px 15px rgba(108, 79, 61, 1);
+}

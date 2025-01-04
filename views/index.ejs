@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovelNest</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+<body class="font">
+    <section>
+        <div class="title">
+            <h1 style="font-size: 32px;">NovelNest</h1>
+            <p style="font-size: 26px;">A community of <span class="bold">readers</span>, a world of <span class="bold">stories</span>.</p>
+        </div>
+    </section>
+    <section class="center shadow">
+        <div class="title">
+            <form action="/add" method="post" >
+                <label for="name">Hello user, what is your name?</label>
+                <input type="text" id="name" name="name">
+                <label for="book">What book did you read? (ISBN Number)</label>
+                <input type="text" id="book" name="book">
+                <label for="thoughts">Write down what your thoughts! (limit 800 characters):</label>
+                <textarea id="thoughts" name="thoughts" rows="5" cols="30" required></textarea>
+                <button type="submit" class="font">Add +</button>
+            </form>
+        </div>
+    </section>
+    <section>
+            <% if (locals.posts) {%>
+                <% posts.forEach(post => { %>
+                    <div class="book-container">
+
+                        <div class="book-cover">
+                            <img src="<%=post.cover%>" alt="">
+                        </div>
+
+                        <div class="book-details">
+                            <h2> Written by <%= post.name %> </h2>
+                            <p><%= post.thoughts %></p>
+                        </div>
+
+                        <div>
+                          <button id="edit<%=post.id%>" class="edit" onclick="handler('<%=post.id%>')">
+                            ✏️
+                            </button>
+                        </div>
+
+                        <div id="edit-form<%= post.id %>" style="display: none;">
+                            <form id="form<%= post.id %>" method="POST" action="/edit">
+                                <input type="hidden" name="updatedID" value="<%= post.id %>">
+                                <textarea name="updatedThoughts"><%= post.thoughts %></textarea>
+                                <input type="submit" value="✅">
+                            </form>
+                        </div>
+
+                        <div>
+                            <form action="/delete" method="post">
+                                <input type="hidden" name="updatedID" value="<%= post.id %>">
+                                <input type="submit" value="❌">
+                            </form>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+
+    </section>
+
+    <script>
+        function handler(postId) {
+            // Toggle the visibility of the edit form
+            var editForm = document.getElementById('edit-form' + postId);
+            if (editForm.style.display === 'none') {
+                editForm.style.display = 'block'; // Show form
+            } else {
+                editForm.style.display = 'none'; // Hide form
+            }
+        }
+    </script>
+</body>
+</html>
