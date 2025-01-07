@@ -28,7 +28,6 @@ app.get("/", async(req,res) => {
         res.render("index.ejs", {posts});
     }
     catch (error){
-        console.log("here get");
         console.log("failure");
     }
 })
@@ -44,7 +43,6 @@ app.post("/add", async (req,res) => {
             await db.query("INSERT INTO posts (name, thoughts, cover) VALUES ($1,$2,$3)",[name,thoughts,img])
         }
         catch (error){
-            console.log("here post");
             console.log("failure")
         }
         res.redirect("/");

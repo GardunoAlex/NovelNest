@@ -1,5 +1,5 @@
 body {
-    background-color: #F4E1C1;
+    background-color: #F7EFE5;
 }
 
 .title{
@@ -28,7 +28,7 @@ body {
 }
 
 button{
-    background-color: #F4E1C1;
+    background-color: #F7EFE5;
     border-color:  #dbceb7 ;
 }
 
@@ -44,15 +44,15 @@ form textarea {
   width: 100%;     /* Makes the input elements span the full width of the form */
   margin-bottom: 10px; /* Adds spacing between each element */
   text-align: center;
-  background-color: #F4E1C1;
-  border-color: #dbceb7;
+  background-color: #F7EFE5;
+ 
   font-family: 'DM Serif Display', serif;
   font-family: 'Libre Baskerville', serif;
   
 }
 
 form button{
-    background-color: #F4E1C1;
+    background-color: #F7EFE5;
     border-color:  #dbceb7 ;
 }
 
@@ -68,6 +68,7 @@ form button{
     margin-bottom: 25px; /* Space between different book containers */
     margin-top: 25px; /* Optional: adds space above each book container */
     box-shadow: -5px 10px 15px rgba(108, 79, 61, 1);
+    background-color: #EFECE6;
 }
 
 .book-cover img {
@@ -93,4 +94,13 @@ form button{
 
 .shaddow{
     box-shadow: -5px 10px 15px rgba(108, 79, 61, 1);
+}
+
+.delete{
+    background-color: #F7EFE5 ;
+    border-color:  #dbceb7 ;
+}
+
+.delete:hover{
+    background-color: aliceblue;
 }
